@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+A placeholder drawable for movie posters while they are loading.
+This drawable provides a subtle gradient and rounded corners to blend
+seamlessly with the app's overall design aesthetic, offering a more
+appealing visual than a simple solid color.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="90"
+        android:startColor="#F0F0F0"
+        android:endColor="#E0E0E0"
+        android:type="linear" />
+    <corners android:radius="8dp" />
+</shape>
