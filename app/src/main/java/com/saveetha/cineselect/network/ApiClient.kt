@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit
 import android.util.Log
 
 object ApiClient {
-    private const val BASE_URL = "http://10.0.2.2:8000/"
 
     fun getInstance(context: Context): ApiService {
         val okHttpClient = OkHttpClient.Builder()

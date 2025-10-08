@@ -25,6 +25,9 @@ interface ApiService {
 
     @GET("api/movies/{id}")
     suspend fun getMovieDetails(@Path("id") movieId: Int): MovieDetails
+
+    @GET("api/movies/{id}/watch-providers")
+    suspend fun getWatchProviders(@Path("id") movieId: Int): com.saveetha.cineselect.data.WatchProviderResponse
     @GET("api/movies/trending-mixes")
     suspend fun getTrendingMixes(): MovieSearchResponse
 

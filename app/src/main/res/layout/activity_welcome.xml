@@ -65,14 +65,15 @@
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="32dp"
-        android:src="@drawable/ic_launcher_background"
-        tools:src="@tools:sample/backgrounds/scenic"
         android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle"
+        tools:src="@tools:sample/backgrounds/scenic" />
 
     <Button
         android:id="@+id/btnLogin"

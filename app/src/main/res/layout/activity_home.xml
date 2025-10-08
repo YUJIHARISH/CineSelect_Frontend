@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F8F8"
+    android:background="?android:attr/colorBackground"
     tools:context=".HomeActivity">
 
     <!-- Top App Bar -->
@@ -15,7 +15,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:text="CineSelect"
-        android:textColor="#1A365D"
+        android:textColor="@color/textPrimary"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
                 android:text="Trending Genre Mixes"
-                android:textColor="#1A365D"
+                android:textColor="@color/textPrimary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -83,59 +83,79 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="12dp"
-                            android:background="@drawable/bg_genre_mix"
+                            android:background="@drawable/bg_trending_mix_primary"
                             android:gravity="center"
-                            android:padding="16dp"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
                             android:text="Action + Thriller"
-                            android:textColor="#666666"
-                            android:textSize="16sp" />
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/tvMix2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="12dp"
-                            android:background="@drawable/bg_genre_mix"
+                            android:background="@drawable/bg_trending_mix_secondary"
                             android:gravity="center"
-                            android:padding="16dp"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
                             android:text="Animation + Family"
-                            android:textColor="#666666"
-                            android:textSize="16sp" />
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/tvMix3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="12dp"
-                            android:background="@drawable/bg_genre_mix"
+                            android:background="@drawable/bg_trending_mix_primary"
                             android:gravity="center"
-                            android:padding="16dp"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
                             android:text="Comedy + Romance"
-                            android:textColor="#666666"
-                            android:textSize="16sp" />
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/tvMix4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="12dp"
-                            android:background="@drawable/bg_genre_mix"
+                            android:background="@drawable/bg_trending_mix_secondary"
                             android:gravity="center"
-                            android:padding="16dp"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
                             android:text="Sci-Fi + Adventure"
-                            android:textColor="#666666"
-                            android:textSize="16sp" />
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/tvMix5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bg_genre_mix"
+                            android:background="@drawable/bg_trending_mix_primary"
                             android:gravity="center"
-                            android:padding="16dp"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
                             android:text="Drama + Mystery"
-                            android:textColor="#666666"
-                            android:textSize="16sp" />
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
 
                 </LinearLayout>
             </HorizontalScrollView>
@@ -148,7 +168,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="32dp"
                 android:text="Recommended For You"
-                android:textColor="#1A365D"
+                android:textColor="@color/textPrimary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -206,7 +226,7 @@
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="?attr/colorSurface"
         app:itemIconSize="24dp"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation_menu"

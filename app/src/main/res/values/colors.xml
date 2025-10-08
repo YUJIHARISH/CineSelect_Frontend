@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="dark_blue">#1E345F</color>
-    <color name="coral">#FF7357</color>
-    <color name="coral_light">#FFAB91</color>
-    <color name="blue">#4285F4</color>
-    <color name="light_gray">#F5F5F5</color>
-    <color name="dark_gray">#757575</color>
-    <color name="hint_color">#BBBBBB</color>
-    <color name="input_background">#F5F5F5</color>
+
+    <!-- Theme Colors -->
     <color name="colorPrimary">#FF7052</color>
-    <color name="colorAccent">#FF7052</color>
     <color name="colorPrimaryDark">#E76046</color>
+    <color name="deep_teal">#008080</color>
+    <color name="deep_teal_dark">#006666</color>
+
+    <!-- Text Colors -->
     <color name="textPrimary">#1A365D</color>
     <color name="textSecondary">#666666</color>
-    <color name="lightGray">#F0F0F0</color>
+
+    <!-- UI Colors -->
+    <color name="light_gray">#EEEEEE</color>
+    <color name="lightGray">#F0F0F0</color> <!-- Legacy color, restore for build -->
     <color name="mediumGray">#777777</color>
     <color name="darkGray">#333333</color>
+    <color name="dark_gray">#757575</color> <!-- Legacy color, restore for build -->
+    <color name="hint_color">#BBBBBB</color>
+    <color name="input_background">#F5F5F5</color>
     <color name="red">#FF0000</color>
+
+    <!-- Legacy Theme Colors (Restore for build) -->
+    <color name="coral">#FF7357</color>
+    <color name="coral_light">#FFAB91</color>
 </resources>

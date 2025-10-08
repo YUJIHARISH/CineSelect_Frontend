@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
         // Handler to delay the start of the next activity
         Handler(Looper.getMainLooper()).postDelayed({
             // Intent to start WelcomeActivity
-            val intent = Intent(this, WelcomeActivity::class.java)
+            val intent = Intent(this, SubscriptionActivity::class.java)
             startActivity(intent)
             // Finish this activity so the user can't navigate back to it
             finish()

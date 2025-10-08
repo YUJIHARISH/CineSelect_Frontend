@@ -3,9 +3,9 @@
     <!-- Base application theme -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here -->
-        <item name="colorPrimary">@color/coral</item>
-        <item name="colorPrimaryDark">@color/dark_blue</item>
-        <item name="colorAccent">@color/coral</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/deep_teal</item>
     </style>
 
     <!-- Custom style for minimalist input fields -->
@@ -15,4 +15,18 @@
         <item name="boxStrokeWidth">1dp</item>
         <item name="hintTextColor">@color/hint_color</item>
     </style>
+
+    <style name="Widget.App.Button.WhiteText" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.Button</item>
+    </style>
+
+    <style name="TextAppearance.App.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.App.RatingBar.Small" parent="Widget.AppCompat.RatingBar.Indicator">
+        <item name="android:minHeight">24dp</item>
+    </style>
+
 </resources>

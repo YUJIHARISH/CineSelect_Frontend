@@ -29,6 +29,7 @@
     <string name="where_to_watch">Where to Watch</string>
     <string name="added_to_watchlist">Added to Watchlist</string>
     <string name="share_movie">Share Movie</string>
+    <string name="provider_logo">Provider logo</string>
     
     <!-- My Watchlist Screen -->
     <string name="my_watchlist">My Watchlist</string>

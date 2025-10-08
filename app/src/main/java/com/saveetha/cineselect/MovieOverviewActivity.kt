@@ -3,7 +3,9 @@ package com.saveetha.cineselect
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.saveetha.cineselect.data.CastAdapter
+import com.saveetha.cineselect.data.WatchProviderAdapter
 import com.saveetha.cineselect.data.Genre
 import com.saveetha.cineselect.data.MovieDetails
 import com.saveetha.cineselect.data.MovieId
@@ -193,14 +196,67 @@ class MovieOverviewActivity : AppCompatActivity() {
     }
 
     private fun toggleWhereToWatch() {
-        btnWhereToWatch.isSelected = !btnWhereToWatch.isSelected
+        showWatchProvidersSheet()
+    }
 
-        if (btnWhereToWatch.isSelected) {
-            btnWhereToWatch.setTextColor(ContextCompat.getColor(this, R.color.white))
-            Toast.makeText(this, "Finding where to watch $movieTitle...", Toast.LENGTH_SHORT).show()
-        } else {
-            btnWhereToWatch.setTextColor(ContextCompat.getColor(this, R.color.textPrimary))
+    private fun showWatchProvidersSheet() {
+        val bottomSheetDialog = BottomSheetDialog(this)
+        val view = layoutInflater.inflate(R.layout.bottom_sheet_watch_providers, null)
+        bottomSheetDialog.setContentView(view)
+
+        val tvStreamingTitle = view.findViewById<TextView>(R.id.tvStreamingTitle)
+        val rvStreaming = view.findViewById<RecyclerView>(R.id.rvStreaming)
+        val tvRentTitle = view.findViewById<TextView>(R.id.tvRentTitle)
+        val rvRent = view.findViewById<RecyclerView>(R.id.rvRent)
+        val tvBuyTitle = view.findViewById<TextView>(R.id.tvBuyTitle)
+        val rvBuy = view.findViewById<RecyclerView>(R.id.rvBuy)
+        val tvNoProviders = view.findViewById<TextView>(R.id.tvNoProviders)
+
+        rvStreaming.layoutManager = LinearLayoutManager(this)
+        rvRent.layoutManager = LinearLayoutManager(this)
+        rvBuy.layoutManager = LinearLayoutManager(this)
+
+        lifecycleScope.launch {
+            try {
+                val response = ApiClient.getInstance(this@MovieOverviewActivity).getWatchProviders(movieId)
+                // Assuming results for the user's current region, e.g., "US"
+                // A more robust implementation would use the user's actual region
+                val providers = response.results["US"]
+
+                var hasProviders = false
+                providers?.flatrate?.let {
+                    if (it.isNotEmpty()) {
+                        tvStreamingTitle.visibility = View.VISIBLE
+                        rvStreaming.adapter = WatchProviderAdapter(it)
+                        hasProviders = true
+                    }
+                }
+                providers?.rent?.let {
+                    if (it.isNotEmpty()) {
+                        tvRentTitle.visibility = View.VISIBLE
+                        rvRent.adapter = WatchProviderAdapter(it)
+                        hasProviders = true
+                    }
+                }
+                providers?.buy?.let {
+                    if (it.isNotEmpty()) {
+                        tvBuyTitle.visibility = View.VISIBLE
+                        rvBuy.adapter = WatchProviderAdapter(it)
+                        hasProviders = true
+                    }
+                }
+
+                if (!hasProviders) {
+                    tvNoProviders.visibility = View.VISIBLE
+                }
+
+            } catch (e: Exception) {
+                Log.e("MovieOverviewActivity", "Failed to load watch providers", e)
+                tvNoProviders.visibility = View.VISIBLE
+            }
         }
+
+        bottomSheetDialog.show()
     }
 
     companion object {

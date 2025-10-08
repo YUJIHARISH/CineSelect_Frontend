@@ -2,6 +2,7 @@ package com.saveetha.cineselect
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -29,7 +30,7 @@ class ExploreActivity : AppCompatActivity() {
         setupBottomNavigation()
         loadRecentSearches()
 
-        val advancedSearch = findViewById<TextView>(R.id.tvAdvancedSearch)
+        val advancedSearch = findViewById<Button>(R.id.btnAdvancedSearch)
         advancedSearch.setOnClickListener {
             val intent = Intent(this, AdvancedSearchActivity::class.java)
             startActivity(intent)

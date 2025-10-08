@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA"
+    android:background="?android:attr/colorBackground"
     tools:context=".ExploreActivity">
 
     <!-- Top bar with back and search -->
@@ -31,7 +31,7 @@
         android:hint="Find movies across genres..."
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:textColorHint="#9AA4B2"
+        android:textColorHint="@color/hint_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivBack"
         app:layout_constraintTop_toTopOf="@id/ivBack" />
@@ -61,7 +61,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
                 android:text="Popular Genres"
-                android:textColor="#1A365D"
+                android:textColor="@color/textPrimary"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -84,13 +84,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="12dp"
-                        android:background="@drawable/bg_selected_genre"
+                        android:background="@drawable/bg_genre_chip"
                         android:paddingStart="20dp"
                         android:paddingTop="10dp"
                         android:paddingEnd="20dp"
                         android:paddingBottom="10dp"
                         android:text="Action"
-                        android:textColor="#FFFFFF"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="16sp" />
 
                     <TextView
@@ -98,13 +98,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="12dp"
-                        android:background="@drawable/bg_unselected_genre"
+                        android:background="@drawable/bg_genre_chip"
                         android:paddingStart="20dp"
                         android:paddingTop="10dp"
                         android:paddingEnd="20dp"
                         android:paddingBottom="10dp"
                         android:text="Comedy"
-                        android:textColor="#333333"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="16sp" />
 
                     <TextView
@@ -112,13 +112,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="12dp"
-                        android:background="@drawable/bg_unselected_genre"
+                        android:background="@drawable/bg_genre_chip"
                         android:paddingStart="20dp"
                         android:paddingTop="10dp"
                         android:paddingEnd="20dp"
                         android:paddingBottom="10dp"
                         android:text="Drama"
-                        android:textColor="#333333"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="16sp" />
 
                     <TextView
@@ -126,13 +126,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="12dp"
-                        android:background="@drawable/bg_unselected_genre"
+                        android:background="@drawable/bg_genre_chip"
                         android:paddingStart="20dp"
                         android:paddingTop="10dp"
                         android:paddingEnd="20dp"
                         android:paddingBottom="10dp"
                         android:text="Horror"
-                        android:textColor="#333333"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="16sp" />
 
                     <TextView
@@ -140,45 +140,46 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="12dp"
-                        android:background="@drawable/bg_unselected_genre"
+                        android:background="@drawable/bg_genre_chip"
                         android:paddingStart="20dp"
                         android:paddingTop="10dp"
                         android:paddingEnd="20dp"
                         android:paddingBottom="10dp"
                         android:text="Sci‑Fi"
-                        android:textColor="#333333"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/genreRomance"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_unselected_genre"
+                        android:background="@drawable/bg_genre_chip"
                         android:paddingStart="20dp"
                         android:paddingTop="10dp"
                         android:paddingEnd="20dp"
                         android:paddingBottom="10dp"
                         android:text="Romance"
-                        android:textColor="#333333"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="16sp" />
                 </LinearLayout>
             </HorizontalScrollView>
 
             <!-- Advanced Search -->
-            <TextView
-                android:id="@+id/tvAdvancedSearch"
+            <Button
+                android:id="@+id/btnAdvancedSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:background="@drawable/bg_genre_mix"
+                android:background="@drawable/bg_advanced_search_button"
                 android:drawableEnd="@drawable/ic_search"
                 android:gravity="center_vertical"
                 android:padding="16dp"
                 android:text="Advanced Search"
-                android:textColor="#6B7280"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <!-- Recent Searches -->
             <TextView
@@ -188,7 +189,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="28dp"
                 android:text="Recent Searches"
-                android:textColor="#1A365D"
+                android:textColor="@color/textPrimary"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -205,7 +206,7 @@
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="?attr/colorSurface"
         app:itemIconSize="24dp"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
