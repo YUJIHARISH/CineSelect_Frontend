@@ -1,0 +1,33 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Sword blade -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#222222"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M12,4 L12,16"/>
+    <!-- Sword tip -->
+    <path
+        android:fillColor="#222222"
+        android:pathData="M12,4 L11,7 L13,7 Z"/>
+    <!-- Crossguard -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#222222"
+        android:strokeWidth="2"
+        android:pathData="M9,14 L15,14"/>
+    <!-- Handle -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#222222"
+        android:strokeWidth="2"
+        android:pathData="M12,16 L12,19"/>
+    <!-- Pommel -->
+    <path
+        android:fillColor="#222222"
+        android:pathData="M12,19 m-1,0 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0"/>
+</vector>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="120dp"
+    android:layout_margin="8dp"
+    android:layout_weight="1"
+    android:background="@color/input_background"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:elevation="2dp"
+    android:padding="8dp"
+    android:shape="rectangle"
+    android:layout_gravity="fill">
+
+    <ImageView
+        android:id="@+id/ivGenreIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:tint="@color/black"
+        android:src="@drawable/ic_action" />
+
+    <TextView
+        android:id="@+id/tvGenreName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Genre"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>

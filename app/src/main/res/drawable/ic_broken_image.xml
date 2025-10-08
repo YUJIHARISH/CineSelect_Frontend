@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+A vector drawable used when a movie poster image fails to load.
+This icon is designed to be clean and modern, fitting the app's UI.
+It clearly communicates to the user that the image is unavailable.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Path for the image frame/border -->
+    <path
+        android:strokeColor="#BDBDBD"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M15,3h4a2,2 0,0 1,2 2v14a2,2 0,0 1,-2 2H5a2,2 0,0 1,-2 -2V5a2,2 0,0 1,2 -2h4"/>
+
+    <!-- Path for the sun/mountain landscape inside -->
+    <path
+        android:strokeColor="#BDBDBD"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M3,16l5-5 4,4 6-6"/>
+    <path
+        android:strokeColor="#BDBDBD"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M8,10a1,1 0,1 0,0 -2,1 1,0 0,0 0,2"/>
+
+    <!-- Path for the "crack" or "broken" line -->
+    <path
+        android:strokeColor="#9E9E9E"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M3.5,20.5L20.5,3.5"/>
+</vector>

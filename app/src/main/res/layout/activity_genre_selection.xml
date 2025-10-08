@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.saveetha.cineselect.GenreSelectionActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Select Your Favorite Genres"
+        android:textColor="#222222"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Pick at least 3 to get started"
+        android:textColor="#888888"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <!-- ScrollView to make the grid scrollable -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/btnContinue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+
+        <!-- Genres grid -->
+        <GridLayout
+            android:id="@+id/genreGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="16dp"
+            android:useDefaultMargins="true">
+
+            <!-- 1. Action -->
+            <LinearLayout
+                android:id="@+id/genreAction"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="action">
+
+                <ImageView
+                    android:id="@+id/iconAction"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Action genre icon"
+                    android:src="@drawable/ic_action"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Action"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 2. Comedy -->
+            <LinearLayout
+                android:id="@+id/genreComedy"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="comedy">
+
+                <ImageView
+                    android:id="@+id/iconComedy"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Comedy genre icon"
+                    android:src="@drawable/ic_comedy"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelComedy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Comedy"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 3. Drama -->
+            <LinearLayout
+                android:id="@+id/genreDrama"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="drama">
+
+                <ImageView
+                    android:id="@+id/iconDrama"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Drama genre icon"
+                    android:src="@drawable/ic_drama"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelDrama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Drama"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 4. Horror -->
+            <LinearLayout
+                android:id="@+id/genreHorror"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="horror">
+
+                <ImageView
+                    android:id="@+id/iconHorror"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Horror genre icon"
+                    android:src="@drawable/ic_horror"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelHorror"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Horror"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 5. Sci-Fi -->
+            <LinearLayout
+                android:id="@+id/genreSciFi"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="sci-fi">
+
+                <ImageView
+                    android:id="@+id/iconSciFi"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Sci-Fi genre icon"
+                    android:src="@drawable/ic_scifi"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelSciFi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Sci-Fi"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 6. Romance -->
+            <LinearLayout
+                android:id="@+id/genreRomance"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="romance">
+
+                <ImageView
+                    android:id="@+id/iconRomance"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Romance genre icon"
+                    android:src="@drawable/ic_romance"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelRomance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Romance"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 7. Thriller -->
+            <LinearLayout
+                android:id="@+id/genreThriller"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="thriller">
+
+                <ImageView
+                    android:id="@+id/iconThriller"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Thriller genre icon"
+                    android:src="@drawable/ic_thriller"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelThriller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Thriller"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 8. Animation -->
+            <LinearLayout
+                android:id="@+id/genreAnimation"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="animation">
+
+                <ImageView
+                    android:id="@+id/iconAnimation"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Animation genre icon"
+                    android:src="@drawable/ic_animation"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelAnimation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Animation"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 9. Fantasy -->
+            <LinearLayout
+                android:id="@+id/genreFantasy"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="fantasy">
+
+                <ImageView
+                    android:id="@+id/iconFantasy"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Fantasy genre icon"
+                    android:src="@drawable/ic_fantasy"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelFantasy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Fantasy"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 10. Documentary -->
+            <LinearLayout
+                android:id="@+id/genreDocumentary"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="documentary">
+
+                <ImageView
+                    android:id="@+id/iconDocumentary"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Documentary genre icon"
+                    android:src="@drawable/ic_documentary"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelDocumentary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Documentary"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 11. Adventure -->
+            <LinearLayout
+                android:id="@+id/genreAdventure"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="adventure">
+
+                <ImageView
+                    android:id="@+id/iconAdventure"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Adventure genre icon"
+                    android:src="@drawable/ic_adventure"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelAdventure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Adventure"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 12. Mystery -->
+            <LinearLayout
+                android:id="@+id/genreMystery"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="mystery">
+
+                <ImageView
+                    android:id="@+id/iconMystery"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Mystery genre icon"
+                    android:src="@drawable/ic_mystery"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelMystery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Mystery"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 13. Crime -->
+            <LinearLayout
+                android:id="@+id/genreCrime"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="crime">
+
+                <ImageView
+                    android:id="@+id/iconCrime"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Crime genre icon"
+                    android:src="@drawable/ic_crime"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelCrime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Crime"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 14. Family -->
+            <LinearLayout
+                android:id="@+id/genreFamily"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="family">
+
+                <ImageView
+                    android:id="@+id/iconFamily"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Family genre icon"
+                    android:src="@drawable/ic_family"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelFamily"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Family"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 15. Musical -->
+            <LinearLayout
+                android:id="@+id/genreMusical"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="musical">
+
+                <ImageView
+                    android:id="@+id/iconMusical"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Musical genre icon"
+                    android:src="@drawable/ic_musical"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelMusical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Musical"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 16. Western -->
+            <LinearLayout
+                android:id="@+id/genreWestern"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="western">
+
+                <ImageView
+                    android:id="@+id/iconWestern"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="Western genre icon"
+                    android:src="@drawable/ic_western"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelWestern"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Western"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            
+
+            <!-- 18. War -->
+            <LinearLayout
+                android:id="@+id/genreWar"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_genre_item"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:tag="war">
+
+                <ImageView
+                    android:id="@+id/iconWar"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="War genre icon"
+                    android:src="@drawable/ic_war"
+                    app:tint="#222222" />
+
+                <TextView
+                    android:id="@+id/labelWar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="War"
+                    android:textColor="#222222"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </GridLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Continue button fixed at the bottom -->
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_continue_button"
+        android:text="Continue"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:backgroundTint="#FF7052"
+        app:layout_constraintBottom_toTopOf="@id/bottomIndicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Bottom bar/indicator (optional, for iOS-style look) -->
+    <View
+        android:id="@+id/bottomIndicator"
+        android:layout_width="120dp"
+        android:layout_height="6dp"
+        android:layout_marginBottom="16dp"
+        android:alpha="0.08"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

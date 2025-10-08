@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LoginApp</string>
+    <string name="log_in">Log In</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="or_continue_with">Or continue with</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="back_button">Back</string>
+    <string name="google_sign_in">Google Sign In</string>
+    <string name="facebook_sign_in">Facebook Sign In</string>
+    <string name="toggle_password_visibility">Toggle password visibility</string>
+    <string name="create_account">Create Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="terms_policy_agreement">By signing up, you agree to our Terms &amp; Privacy Policy</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="terms">Terms</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_agreement">By signing up, you agree to our <b>Terms</b> &amp; <b>Privacy Policy</b></string>
+    
+    <!-- Movie Overview Screen -->
+    <string name="overview">Overview</string>
+    <string name="cast_and_crew">Cast &amp; Crew</string>
+    <string name="you_might_also_like">You might also like</string>
+    <string name="add_to_watchlist">Add to Watchlist</string>
+    <string name="where_to_watch">Where to Watch</string>
+    <string name="added_to_watchlist">Added to Watchlist</string>
+    <string name="share_movie">Share Movie</string>
+    <string name="provider_logo">Provider logo</string>
+    
+    <!-- My Watchlist Screen -->
+    <string name="my_watchlist">My Watchlist</string>
+    <string name="create_new_watchlist">Create New Watchlist</string>
+    
+    <!-- Profile Screen -->
+    <string name="edit_profile">Edit Profile</string>
+    <string name="your_stats">Your Stats</string>
+    <string name="favorite_genres">Favorite Genres</string>
+    <string name="movies_rated">Movies Rated</string>
+    <string name="watchlist">Watchlist</string>
+    <string name="reviews">Reviews</string>
+    <string name="preferences">Preferences</string>
+    <string name="language_settings">Language Settings</string>
+    <string name="theme">Theme</string>
+    <string name="content_filters">Content Filters</string>
+    <string name="privacy">Privacy</string>
+    <string name="account">Account</string>
+    <string name="notifications">Notifications</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="log_out">Log Out</string>
+
+</resources>
